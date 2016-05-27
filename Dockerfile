@@ -8,7 +8,8 @@ RUN apt-get update \
  && cleanimage
 
 RUN appfolders add "httpd/www" "/var/www" \
- && appfolders add "httpd/etc" "/etc/apache2"
+ && appfolders add "httpd/etc" "/etc/apache2" \
+ && appfolders add "httpd/log" "/var/log/apache2"
 
 RUN cleanimage
 
