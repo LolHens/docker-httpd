@@ -7,6 +7,10 @@ RUN apt-get update \
       apache2 \
  && cleanimage
 
+COPY ["bin/enable-mods", "/etc/my_init.d/"]
+RUN chmod +x "/etc/my_init.d/enable-mods" \
+ && touch "/etc/apache2/enable-mods.txt"
+
 RUN appfolders add "httpd/www" "/var/www" \
  && appfolders add "httpd/etc" "/etc/apache2" \
  && appfolders add "httpd/log" "/var/log/apache2"
