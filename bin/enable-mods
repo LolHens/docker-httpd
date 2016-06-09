@@ -1,6 +1,3 @@
 #!/bin/bash
 
-cat "/etc/apache2/enable-mods.txt" | while read line
-do
-  a2enmod ${line}
-done
+a2enmod `cat "/etc/apache2/enable-mods.txt"`
